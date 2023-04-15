@@ -43,6 +43,8 @@ function onStartCount() {
       Notiflix.Notify.failure(`Please choose a date in the future!`);
       return;
     } else {
+      startBtn.disabled = true;
+      inputDate.disabled = true;
       const time = convertMs(timerTime);
       secondsCount.textContent = time.seconds.toString().padStart(2, '0');
       minutesCount.textContent = time.minutes.toString().padStart(2, '0');
@@ -54,7 +56,7 @@ function onStartCount() {
 
       if (zero) {
         clearInterval(id);
-        startBtn.disabled = true;
+        inputDate.disabled = false;
         Notiflix.Notify.success(`Finally! Great!`);
         return;
       }
