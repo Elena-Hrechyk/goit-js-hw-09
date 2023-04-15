@@ -27,6 +27,10 @@ function onSubmit(evt) {
       });
     time = time + step;
   }
+
+  setTimeout(() => {
+    form.reset();
+  }, time);
 }
 
 function createPromise(position, delay) {
